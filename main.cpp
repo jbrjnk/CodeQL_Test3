@@ -16,14 +16,14 @@ void useAfterFree() {
     std::cout << (*ptr) << std::endl;  // Use after free!
 }
 
-void doSomething()
+void XXXXXXXX_doSomething()
 {
-    std::cout << "Hello world";
+    std::cout << "XXXXXXXX Hello world";
 }
 
 int main() {
     BufferOverflowFunction();
-    doSomething();
+    XXXXXXXX_doSomething();
     return 0;
 }
 
