@@ -3,7 +3,8 @@
 
 void BufferOverflowFunction() {
     char buffer[10];
-    std::strcpy(buffer, "This is a very long string that will overflow the buffer.");
+    // codeql[cpp/very-likely-overrunning-write]
+    std::strcpy(buffer, "This is a very long string that will overflow the buffer. XYXY");
 }
 
 // Line of code ........ Line of code.............
@@ -13,7 +14,7 @@ void BufferOverflowFunction() {
 void useAfterFree() {
     int* ptr = new int(10);
     delete ptr; // Free memory
-    std::cout << (*ptr) << std::endl;  // Use after free!
+    std::cout << (*ptr) << std::endl;  // Use after free!!
 }
 
 void doSomething()
